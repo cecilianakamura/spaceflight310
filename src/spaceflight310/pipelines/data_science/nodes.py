@@ -4,7 +4,7 @@ generated using Kedro 0.19.5
 """
 
 import logging
-import typing as t
+from typing import dict, Tuple
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -18,7 +18,7 @@ def split_data(df: pd.DataFrame, parameters: dict) -> t.Tuple:
     X = df[parameters["features"]]
     y = df["price"]
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=parameters["test_size"]
+        X, y, test_size=parameters["test_size"], random_state=parameters["random_state"]
     )
     return X_train, X_test, y_train, y_test
 
