@@ -39,4 +39,4 @@ def create_model_input_table(
         companies, left_on="company_id", right_on="id"
     )
 
-    return model_input_table.dropna() 
+    return model_input_table.dropna()
