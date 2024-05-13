@@ -1,0 +1,13 @@
+companies:
+  type: pandas.CSVDataset
+  filepath: gs://spaceflight310dev/companies.csv
+
+reviews:
+  type: pandas.CSVDataset
+  filepath: gs://spaceflight310dev/reviews.csv
+
+shuttles:
+  type: pandas.ExcelDataset
+  filepath: gs://spaceflight310dev/shuttles.xlsx
+  load_args:
+    engine: openpyxl

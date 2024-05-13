@@ -4,7 +4,7 @@ generated using Kedro 0.19.5
 """
 
 import logging
-from typing import dict, Tuple
+from typing import Dict, Tuple
 
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -14,7 +14,7 @@ from sklearn.linear_model import LinearRegression
 logger = logging.getLogger(__name__)
 
 
-def split_data(df: pd.DataFrame, parameters: dict) -> t.Tuple:
+def split_data(df: pd.DataFrame, parameters: Dict) -> Tuple:
     X = df[parameters["features"]]
     y = df["price"]
     X_train, X_test, y_train, y_test = train_test_split(
