@@ -7,11 +7,11 @@ with open("requirements.txt") as f:
     required_packages = f.read().splitlines()
 
 # Include all files in the src, data, and conf directories
-package_data = []
-for directory in ["src", "data", "conf"]:
+data_files = []
+for directory in ["data", "conf", "src"]:
     for dirname, _, filenames in os.walk(directory):
         for filename in filenames:
-            package_data.append(os.path.join(dirname, filename))
+            data_files.append((os.path.join('spaceflight310', dirname), [os.path.join(dirname, filename)]))
 
 setup(
     name="spaceflight310",
@@ -19,5 +19,6 @@ setup(
     packages=find_packages(),
     install_requires=required_packages,
     entry_points={"console_scripts": [entry_point]},
-    package_data={"spaceflight310": package_data},  # Include package data
+    include_package_data=True,
+    data_files=data_files,
 )

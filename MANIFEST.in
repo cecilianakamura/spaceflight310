@@ -1,4 +1,2 @@
+recursive-include data *
 recursive-include conf *
-recursive-include logs *
-recursive-include notebooks *
-recursive-include docs *
