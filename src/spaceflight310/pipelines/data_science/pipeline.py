@@ -1,12 +1,7 @@
-"""
-This is a boilerplate pipeline 'data_science'
-generated using Kedro 0.19.5
-"""
+from kedro.pipeline import Pipeline, node
+from kedro.pipeline.modular_pipeline import pipeline
 
-from kedro.pipeline import Pipeline, pipeline, node
-
-from .nodes import evaluate_model, train_model, split_data
-import os
+from .nodes import evaluate_model, split_data, train_model
 
 
 def create_pipeline(**kwargs) -> Pipeline:
@@ -32,7 +27,6 @@ def create_pipeline(**kwargs) -> Pipeline:
             ),
         ]
     )
-
     ds_pipeline_1 = pipeline(
         pipe=pipeline_instance,
         inputs="model_input_table",
